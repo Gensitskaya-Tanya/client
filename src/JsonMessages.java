@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class JsonMessages { // класс обертка по стандарту JSON содержимое обьекта должно быть завернуто еще в один обьект
+public class JsonMessages {
     private final List<Message> list;
 
     public JsonMessages(List<Message> sourceList, int fromIndex) {

@@ -10,9 +10,9 @@ import java.util.Date;
 
 public class Message {
 	private Date date = new Date();
-	private String from; // кто отправил
-	private String to; // кому отправили
-	private String text; // тело сообщения
+	private String from;
+	private String to;
+	private String text;
 
 	public Message(String from, String text) {
 		if (text.startsWith(">")) {
@@ -24,12 +24,12 @@ public class Message {
 		this.from = from;
 	}
 
-	public String toJSON() { //преобразует сообщение в JSON строку
+	public String toJSON() {
 		Gson gson = new GsonBuilder().create();
 		return gson.toJson(this);
 	}
 	
-	public static Message fromJSON(String s) { // из строки JSON сообщение
+	public static Message fromJSON(String s) {
 		Gson gson = new GsonBuilder().create();
 		return gson.fromJson(s, Message.class);
 	}
@@ -42,7 +42,7 @@ public class Message {
                 .toString();
 	}
 
-	public int send(String url) throws IOException {// одно сообщение отправиль по определенному URL
+	public int send(String url) throws IOException {
 		URL obj = new URL(url);
 		HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
 		
